@@ -39,6 +39,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="5gl-Q8-8ad" kind="show" identifier="stateDetailSegue" id="6Us-L4-OJ7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -53,7 +56,7 @@
                         <attributedString key="attributedTitle">
                             <fragment content="Pull to refresh">
                                 <attributes>
-                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                    <font key="NSFont" metaFont="toolTip"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -62,7 +65,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sch-3y-gkk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3036" y="-295"/>
+            <point key="canvasLocation" x="1829" y="1506"/>
         </scene>
         <!--State Detail View Controller-->
         <scene sceneID="aG7-y4-KPE">
@@ -73,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIFORNIA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9QA-xB-ZGm">
-                                <rect key="frame" x="20" y="54" width="374" height="100"/>
+                                <rect key="frame" x="20" y="98" width="374" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="tUh-11-HoG"/>
                                 </constraints>
@@ -82,13 +85,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With 23,234 tested cases, California has 1,345 positive cases and 16,343 negative cases. There have been a total of 123 deaths." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qoq-gz-6WU">
-                                <rect key="frame" x="30" y="162" width="354" height="58"/>
+                                <rect key="frame" x="30" y="206" width="354" height="58"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="deaths" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t2z-ay-9Rt">
-                                <rect key="frame" x="30" y="240" width="354" height="18"/>
+                                <rect key="frame" x="30" y="284" width="354" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -108,6 +111,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A5Y-6x-N0C"/>
                     </view>
+                    <navigationItem key="navigationItem" id="c46-Py-M61"/>
                     <connections>
                         <outlet property="stateCaptionLabel" destination="Qoq-gz-6WU" id="Ns1-Ip-P83"/>
                         <outlet property="stateDeathsLabel" destination="t2z-ay-9Rt" id="QFu-eG-xBX"/>
@@ -116,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUS-Mg-nhG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3940.579710144928" y="-295.3125"/>
+            <point key="canvasLocation" x="1829" y="2210"/>
         </scene>
         <!--News Table View Controller-->
         <scene sceneID="al7-19-4Jc">
@@ -164,7 +168,7 @@
                         <attributedString key="attributedTitle">
                             <fragment content="Pull to refresh">
                                 <attributes>
-                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                    <font key="NSFont" metaFont="toolTip"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -173,7 +177,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSq-ze-bI2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3051" y="408"/>
+            <point key="canvasLocation" x="1045" y="1505"/>
         </scene>
         <!--Article View Controller-->
         <scene sceneID="nT3-V3-rBY">
@@ -207,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sq2-bP-lHy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3941" y="408"/>
+            <point key="canvasLocation" x="1045" y="2211"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1eM-DU-4ty">
@@ -247,7 +251,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYN-yI-ybw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2093" y="-294"/>
+            <point key="canvasLocation" x="1830" y="785"/>
         </scene>
         <!--Home-->
         <scene sceneID="Nn5-d6-xQo">
@@ -311,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXc-6G-zwp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="761"/>
+            <point key="canvasLocation" x="291" y="785"/>
         </scene>
         <!--News-->
         <scene sceneID="FsK-fY-ork">
@@ -330,7 +334,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMN-C5-eTb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2094" y="408"/>
+            <point key="canvasLocation" x="1045" y="786"/>
         </scene>
     </scenes>
     <resources>

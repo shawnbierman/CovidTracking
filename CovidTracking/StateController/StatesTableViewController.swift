@@ -96,14 +96,11 @@ class StatesTableViewController: UITableViewController {
         return cell
 
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let selectedState = states[indexPath.row]
-        
-        if let viewController = storyboard?.instantiateViewController(identifier: "StateDetailViewController") as? StateDetailViewController {
-            viewController.state = selectedState
-            navigationController?.pushViewController(viewController, animated: true)
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedPath = tableView.indexPathForSelectedRow else { return }
+        if let target = segue.destination as? StateDetailViewController {
+            target.state = states[selectedPath.row]
         }
     }
 }
