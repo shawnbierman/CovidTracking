@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
                 let positives = total.positive.formatNumber(with: .decimal) ?? "unknown"
                 let deaths = total.death.formatNumber(with: .decimal) ?? "unknown"
                 
-                let body = "The US has currently tested a total of \(totalResults) persons with a total of \(positives) positive results."
+                let body = "The U.S. has currently tested a total of \(totalResults) persons with a total of \(positives) positive results."
                 
                 DispatchQueue.main.async {
                     self?.infoTotalsLabel.text = body
