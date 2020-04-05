@@ -13,6 +13,7 @@ class StateDetailViewController: UIViewController {
     @IBOutlet weak var stateNameLabel: UILabel!
     @IBOutlet weak var stateCaptionLabel: UILabel!
     @IBOutlet weak var stateDeathsLabel: UILabel!
+    @IBOutlet weak var dateModifiedLabel: UILabel!
     
     var state: State?
     
@@ -30,6 +31,12 @@ class StateDetailViewController: UIViewController {
             stateNameLabel.text = stateName.uppercased()
             stateCaptionLabel.text = stateCaptionLabelString
             
+            if let formattedDate = formatDate(from: state.dateModified) {
+                dateModifiedLabel.text = "Last modified: \(formattedDate)"
+            } else {
+                dateModifiedLabel.text = "No date information available."
+            }
+            
             if let deaths = state.death?.formatNumber(with: .decimal) {
                 stateDeathsLabel.text = "There have been a total of \(deaths) deaths."
             } else {
@@ -37,8 +44,46 @@ class StateDetailViewController: UIViewController {
             }
             
         } else {
-            stateCaptionLabel.text = "Information for this region is incomplete at this time."
-            stateDeathsLabel.text = ""
+            if let state = state, let stateName = statesDictionary[state.state] {
+                stateNameLabel.text = stateName.uppercased()
+                stateCaptionLabel.text = "Information for this region is incomplete at this time."
+                stateDeathsLabel.text = ""
+            }
+            
+        }
+        
+    }
+    
+    func formatISO8601Date(from string: String) -> String? {
+        
+        // format ISO8601 date
+        //        let dateString = "2020-03-29T23:00:00Z"
+        //        let df = ISO8601DateFormatter()
+        //        df.date(from: dateString) // Optional(2020-03-29 23:00:00 +0000)
+        
+        let df = DateFormatter()
+        guard let date = ISO8601DateFormatter().date(from: string) else { return nil }
+        return df.string(from: date)
+        
+    }
+    
+    func formatDate(from string: String) -> String? {
+        
+        // format ISO8601 date
+//        let dateString = "2020-03-29T23:00:00Z"
+//        let df = ISO8601DateFormatter()
+//        df.date(from: dateString) // Optional(2020-03-29 23:00:00 +0000)
+        
+        let formatterInput = DateFormatter()
+        formatterInput.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        let formatterOutput = DateFormatter()
+        formatterOutput.dateFormat = "MMMM d, yyyy hh:mm a"
+        
+        if let date = formatterInput.date(from: string) {
+            return formatterOutput.string(from: date)
+        } else {
+            return nil
         }
         
     }

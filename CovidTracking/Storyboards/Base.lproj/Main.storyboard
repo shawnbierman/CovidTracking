@@ -56,7 +56,7 @@
                         <attributedString key="attributedTitle">
                             <fragment content="Pull to refresh">
                                 <attributes>
-                                    <font key="NSFont" metaFont="toolTip"/>
+                                    <font key="NSFont" metaFont="label" size="11"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -96,14 +96,23 @@
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No timestamp information available." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0oC-Np-e1a">
+                                <rect key="frame" x="20" y="772.33333333333337" width="374" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="t2z-ay-9Rt" firstAttribute="trailing" secondItem="Qoq-gz-6WU" secondAttribute="trailing" id="89Z-Vd-Lss"/>
                             <constraint firstItem="9QA-xB-ZGm" firstAttribute="leading" secondItem="A5Y-6x-N0C" secondAttribute="leading" constant="20" id="CGQ-qb-ItE"/>
                             <constraint firstItem="A5Y-6x-N0C" firstAttribute="trailing" secondItem="9QA-xB-ZGm" secondAttribute="trailing" constant="20" id="HkM-4L-IiL"/>
+                            <constraint firstItem="A5Y-6x-N0C" firstAttribute="trailing" secondItem="0oC-Np-e1a" secondAttribute="trailing" constant="20" id="JoV-vf-ivx"/>
                             <constraint firstItem="Qoq-gz-6WU" firstAttribute="trailing" secondItem="9QA-xB-ZGm" secondAttribute="trailing" constant="-10" id="Lud-uc-cnp"/>
                             <constraint firstItem="t2z-ay-9Rt" firstAttribute="leading" secondItem="Qoq-gz-6WU" secondAttribute="leading" id="PDP-d1-Sbb"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="0oC-Np-e1a" secondAttribute="bottom" constant="25" id="alH-R9-5g8"/>
+                            <constraint firstItem="0oC-Np-e1a" firstAttribute="leading" secondItem="A5Y-6x-N0C" secondAttribute="leading" constant="20" id="f5Q-mA-jsn"/>
                             <constraint firstItem="Qoq-gz-6WU" firstAttribute="leading" secondItem="9QA-xB-ZGm" secondAttribute="leading" constant="10" id="gS9-SS-V7C"/>
                             <constraint firstItem="9QA-xB-ZGm" firstAttribute="top" secondItem="A5Y-6x-N0C" secondAttribute="top" constant="10" id="hQL-K5-l2M"/>
                             <constraint firstItem="t2z-ay-9Rt" firstAttribute="top" secondItem="Qoq-gz-6WU" secondAttribute="bottom" constant="20" id="pcJ-KH-BLI"/>
@@ -113,6 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="c46-Py-M61"/>
                     <connections>
+                        <outlet property="dateModifiedLabel" destination="0oC-Np-e1a" id="t51-Q8-MqY"/>
                         <outlet property="stateCaptionLabel" destination="Qoq-gz-6WU" id="Ns1-Ip-P83"/>
                         <outlet property="stateDeathsLabel" destination="t2z-ay-9Rt" id="QFu-eG-xBX"/>
                         <outlet property="stateNameLabel" destination="9QA-xB-ZGm" id="sSf-LF-ipd"/>
@@ -168,7 +178,7 @@
                         <attributedString key="attributedTitle">
                             <fragment content="Pull to refresh">
                                 <attributes>
-                                    <font key="NSFont" metaFont="toolTip"/>
+                                    <font key="NSFont" metaFont="label" size="11"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
