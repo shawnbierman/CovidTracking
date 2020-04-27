@@ -13,7 +13,7 @@ class Service {
     static let shared = Service() // singleton
 
     // MARK: - Available apis
-    /// You must supply a model for each API and an optional authorization string.
+    /// You must supply a model for each API and an optional authorization string if required.
 
     func fetchAllStates(api: String, completion: @escaping (Result<[State], Error>) -> Void) {
         fetchJSONDecodableData(query: api, authorization: nil, completion: completion)
