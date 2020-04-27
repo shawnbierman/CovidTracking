@@ -10,9 +10,6 @@ import UIKit
 
 class ArticlesTableViewController: CommonTableViewController {
 
-    let cellReuseIdentifier = "articleCell"
-    
-    
     var articles = [Article]() {
         didSet {
             DispatchQueue.main.async {
@@ -80,6 +77,7 @@ class ArticlesTableViewController: CommonTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

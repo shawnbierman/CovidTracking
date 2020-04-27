@@ -10,6 +10,9 @@ import UIKit
 
 class CommonTableViewController: UITableViewController {
 
+    let cellReuseIdentifier = "cell"
+    
+    
     func configureRefreshControl(with selector: Selector) {
         
         refreshControl = UIRefreshControl()

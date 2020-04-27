@@ -10,8 +10,6 @@ import UIKit
 
 class StatesTableViewController: CommonTableViewController {
 
-    let cellReuseIdentifier = "stateCell"
-    
     var states = [State]() {
         didSet {
             DispatchQueue.main.async {
