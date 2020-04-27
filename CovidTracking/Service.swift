@@ -22,21 +22,19 @@ class Service {
     /// You must supply a model for each API and an optional authorization string if required.
 
     func fetchAllStates(using endpoint: Endpoint, completion: @escaping (Result<[State], Error>) -> Void) {
-        fetchJSONDecodableData(endpoint: endpoint, authorization: nil, completion: completion)
+        fetchJSONDecodableData(endpoint: endpoint, completion: completion)
     }
 
     func fetchAllArticles(using endpoint: Endpoint, completion: @escaping (Result<[Article], Error>) -> Void) {
-        fetchJSONDecodableData(endpoint: endpoint, authorization: nil, completion: completion)
+        fetchJSONDecodableData(endpoint: endpoint, completion: completion)
     }
 
     func fetchTotals(using endpoint: Endpoint, completion: @escaping (Result<[Total], Error>) -> Void) {
-        fetchJSONDecodableData(endpoint: endpoint, authorization: nil, completion: completion)
+        fetchJSONDecodableData(endpoint: endpoint, completion: completion)
     }
     
     // MARK: - Session and decode
-    private func fetchJSONDecodableData<T: Decodable>(endpoint: Endpoint,
-                                                      authorization: String?,
-                                                      completion: @escaping (Result<T, Error>) -> Void) {
+    private func fetchJSONDecodableData<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> Void) {
 
         dump(endpoint)
         
@@ -57,29 +55,5 @@ class Service {
 
         task.resume()
 
-    }
-
-    private func buildURLRequest(query: String, authorization: String?) -> URLRequest? {
-
-        let body = ["query": query]
-        let urlString = "https://covidtracking.com/api/graphql"
-        let url = URL(string: urlString)
-
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        if let authorization = authorization {
-            request.addValue("Bearer " + authorization, forHTTPHeaderField: "Authorization")
-        }
-
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
-        } catch let error {
-            dump(error.localizedDescription)
-            return nil
-        }
-
-        return request
     }
 }
