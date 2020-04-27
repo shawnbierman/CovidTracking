@@ -25,7 +25,7 @@ class TabBarViewController: UITabBarController {
         articlesTableViewController.title = "Articles"
         articlesTableViewController.tabBarItem = createTabBarItem(titled: "Articles", using: "doc")
         
-        let statesViewController = StatesViewController()
+        let statesViewController = StatesTableViewController()
         statesViewController.title = "States"
         statesViewController.tabBarItem = createTabBarItem(titled: "State Reports", using: "map")
         
