@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ArticlesTableViewController: UITableViewController {
+class ArticlesTableViewController: CommonTableViewController {
 
     let cellReuseIdentifier = "articleCell"
+    
     
     var articles = [Article]() {
         didSet {
@@ -23,12 +24,10 @@ class ArticlesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         
+        configureRefreshControl(with: #selector(refreshData))
         refreshData()
     }
 

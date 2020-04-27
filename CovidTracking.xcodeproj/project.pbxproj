@@ -12,9 +12,10 @@
 		1F1117C42454EE4700ED54F7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1117C32454EE4700ED54F7 /* TabBarViewController.swift */; };
 		1F1117C72454EF6200ED54F7 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1117C62454EF6200ED54F7 /* ContentViewController.swift */; };
 		1F1117C92454F74800ED54F7 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1117C82454F74800ED54F7 /* ArticlesTableViewController.swift */; };
-		1F1117CB2454FF8300ED54F7 /* StatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1117CA2454FF8300ED54F7 /* StatesViewController.swift */; };
+		1F1117CB2454FF8300ED54F7 /* StatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1117CA2454FF8300ED54F7 /* StatesTableViewController.swift */; };
 		1F1F6104245637AF00E4943E /* StatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1F6103245637AF00E4943E /* StatesTableViewCell.swift */; };
 		1F1F61062456485000E4943E /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1F61052456485000E4943E /* Int+Ext.swift */; };
+		1F2B758B245780E000D49A1C /* CommonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B758A245780E000D49A1C /* CommonTableViewController.swift */; };
 		1F37E1AC242BE1EF0029F428 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37E1AB242BE1EF0029F428 /* Article.swift */; };
 		1F85187524316E630096B60E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F85187424316E630096B60E /* HomeViewController.swift */; };
 		1F851877243171EF0096B60E /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F851876243171EF0096B60E /* Total.swift */; };
@@ -55,9 +56,10 @@
 		1F1117C32454EE4700ED54F7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1F1117C62454EF6200ED54F7 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		1F1117C82454F74800ED54F7 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
-		1F1117CA2454FF8300ED54F7 /* StatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesViewController.swift; sourceTree = "<group>"; };
+		1F1117CA2454FF8300ED54F7 /* StatesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesTableViewController.swift; sourceTree = "<group>"; };
 		1F1F6103245637AF00E4943E /* StatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesTableViewCell.swift; sourceTree = "<group>"; };
 		1F1F61052456485000E4943E /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
+		1F2B758A245780E000D49A1C /* CommonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTableViewController.swift; sourceTree = "<group>"; };
 		1F37E1AB242BE1EF0029F428 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		1F85187424316E630096B60E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1F851876243171EF0096B60E /* Total.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
+		1F2B7589245780C600D49A1C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1F2B758A245780E000D49A1C /* CommonTableViewController.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		1F645110242CE7DD00FFFF6F /* ArticlesScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +169,7 @@
 		1F9A58862427DD96006E2D89 /* CovidTracking */ = {
 			isa = PBXGroup;
 			children = (
+				1F2B7589245780C600D49A1C /* Shared */,
 				1F1F61012456366A00E4943E /* HomeScreen */,
 				1FB02AEA242986B800AE2B4D /* StateScreen */,
 				1F645110242CE7DD00FFFF6F /* ArticlesScreen */,
@@ -206,8 +217,8 @@
 		1FB02AEA242986B800AE2B4D /* StateScreen */ = {
 			isa = PBXGroup;
 			children = (
+				1F1117CA2454FF8300ED54F7 /* StatesTableViewController.swift */,
 				1FEADCCA245654290071AA71 /* StatesDetailViewController.swift */,
-				1F1117CA2454FF8300ED54F7 /* StatesViewController.swift */,
 				1F1F6103245637AF00E4943E /* StatesTableViewCell.swift */,
 			);
 			path = StateScreen;
@@ -389,8 +400,9 @@
 				1F08185D2455FFEC00C8C1F8 /* ArticleTableViewCell.swift in Sources */,
 				1F37E1AC242BE1EF0029F428 /* Article.swift in Sources */,
 				1F1117C72454EF6200ED54F7 /* ContentViewController.swift in Sources */,
-				1F1117CB2454FF8300ED54F7 /* StatesViewController.swift in Sources */,
+				1F1117CB2454FF8300ED54F7 /* StatesTableViewController.swift in Sources */,
 				1F851877243171EF0096B60E /* Total.swift in Sources */,
+				1F2B758B245780E000D49A1C /* CommonTableViewController.swift in Sources */,
 				1F85187524316E630096B60E /* HomeViewController.swift in Sources */,
 				1F1117C42454EE4700ED54F7 /* TabBarViewController.swift in Sources */,
 				1FC0F5582428F11C0082D487 /* StateDictionary.swift in Sources */,
