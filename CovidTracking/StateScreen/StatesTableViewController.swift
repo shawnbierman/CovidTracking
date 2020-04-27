@@ -36,14 +36,15 @@ class StatesTableViewController: CommonTableViewController {
         configureRefreshControl(with: #selector(refreshData))
         configureNavButton()
         refreshData()
+        
     }
     
     
     private func configureNavButton() {
         
         let buttons = ("arrow.up.arrow.down.square", "arrow.up.arrow.down.square.fill")
-        let sortButton = UIBarButtonItem(image: UIImage(systemName: !sorted ? buttons.0 : buttons.1),
-                                         style: .plain, target: self, action: #selector(sortTable))
+        let image = UIImage(systemName: !sorted ? buttons.0 : buttons.1)
+        let sortButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(sortTable))
         
         navigationItem.rightBarButtonItems = [sortButton]
         
@@ -58,7 +59,7 @@ class StatesTableViewController: CommonTableViewController {
     
     @objc fileprivate func refreshData() {
         
-        Service.shared.fetchAllStates(api: "https://covidtracking.com/api/states") { [weak self] (result) in
+        Service.shared.fetchAllStates(using: .states) { [weak self] (result) in
             
             switch result {
                 
@@ -100,6 +101,7 @@ class StatesTableViewController: CommonTableViewController {
         return cell
         
     }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 

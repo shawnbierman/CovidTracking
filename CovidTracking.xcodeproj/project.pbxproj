@@ -111,7 +111,6 @@
 		1F1F61012456366A00E4943E /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				1F1117C62454EF6200ED54F7 /* ContentViewController.swift */,
 				1F1117C32454EE4700ED54F7 /* TabBarViewController.swift */,
 				1F85187424316E630096B60E /* HomeViewController.swift */,
 			);
@@ -122,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				1F2B758A245780E000D49A1C /* CommonTableViewController.swift */,
+				1F1117C62454EF6200ED54F7 /* ContentViewController.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";

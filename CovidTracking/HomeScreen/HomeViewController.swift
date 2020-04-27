@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
 
     fileprivate func refreshData() {
         
-        Service.shared.fetchTotals(api: "https://covidtracking.com/api/us") { [weak self] result in
+        Service.shared.fetchTotals(using: .us) { [weak self] result in
             
             guard let self = self else { return }
             

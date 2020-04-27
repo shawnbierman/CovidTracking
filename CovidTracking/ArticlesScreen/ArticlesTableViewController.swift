@@ -29,12 +29,13 @@ class ArticlesTableViewController: CommonTableViewController {
         
         configureRefreshControl(with: #selector(refreshData))
         refreshData()
+        
     }
 
     
     @objc fileprivate func refreshData() {
         
-        Service.shared.fetchAllArticles(api: "https://covidtracking.com/api/press") { [weak self] (result) in
+        Service.shared.fetchAllArticles(using: .press) { [weak self] (result) in
             
             switch result {
                 

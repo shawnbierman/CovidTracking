@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum Endpoint: String {
+    case states
+    case press
+    case us
+}
+
 class Service {
 
     static let shared = Service() // singleton
@@ -15,24 +21,27 @@ class Service {
     // MARK: - Available apis
     /// You must supply a model for each API and an optional authorization string if required.
 
-    func fetchAllStates(api: String, completion: @escaping (Result<[State], Error>) -> Void) {
-        fetchJSONDecodableData(query: api, authorization: nil, completion: completion)
+    func fetchAllStates(using endpoint: Endpoint, completion: @escaping (Result<[State], Error>) -> Void) {
+        fetchJSONDecodableData(endpoint: endpoint, authorization: nil, completion: completion)
     }
 
-    func fetchAllArticles(api: String, completion: @escaping (Result<[Article], Error>) -> Void) {
-        fetchJSONDecodableData(query: api, authorization: nil, completion: completion)
+    func fetchAllArticles(using endpoint: Endpoint, completion: @escaping (Result<[Article], Error>) -> Void) {
+        fetchJSONDecodableData(endpoint: endpoint, authorization: nil, completion: completion)
     }
 
-    func fetchTotals(api: String, completion: @escaping (Result<[Total], Error>) -> Void) {
-        fetchJSONDecodableData(query: api, authorization: nil, completion: completion)
+    func fetchTotals(using endpoint: Endpoint, completion: @escaping (Result<[Total], Error>) -> Void) {
+        fetchJSONDecodableData(endpoint: endpoint, authorization: nil, completion: completion)
     }
     
     // MARK: - Session and decode
-    private func fetchJSONDecodableData<T: Decodable>(query: String, authorization: String?, completion: @escaping (Result<T, Error>) -> Void) {
+    private func fetchJSONDecodableData<T: Decodable>(endpoint: Endpoint,
+                                                      authorization: String?,
+                                                      completion: @escaping (Result<T, Error>) -> Void) {
 
-        dump(query)
-
-        let url = URL(string: query)
+        dump(endpoint)
+        
+        let baseUrlString = "https://covidtracking.com/api/".appending(endpoint.rawValue)
+        let url = URL(string: baseUrlString)
         let task = URLSession.shared.dataTask(with: url!) { (data, _, error) in
 
             guard error == nil else { return }
