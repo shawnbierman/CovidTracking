@@ -60,7 +60,7 @@ class ContentViewController: UIViewController {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        headerLabel.font = UIFont(name: "DIN Condensed", size: 75)
+        headerLabel.font = UIFont(name: "DINCondensed-Bold", size: 75)
         headerLabel.adjustsFontSizeToFitWidth = true
         headerLabel.textAlignment = .center
         headerLabel.textColor = .secondaryLabel
