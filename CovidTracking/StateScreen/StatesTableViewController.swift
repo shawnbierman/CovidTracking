@@ -51,7 +51,7 @@ class StatesTableViewController: CommonTableViewController {
     
     @objc func sortTable() {
         
-        states.sort(by: sorted ? { $0.state < $1.state } : { $0.state > $1.state })
+        states.reverse()
         sorted.toggle()
         
     }
@@ -69,8 +69,7 @@ class StatesTableViewController: CommonTableViewController {
                 DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
                 
             case .success(let model):
-               
-                self?.states = model.sorted(by: { $0.state < $1.state })
+                self?.states = model
                 DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
             }
         }
@@ -101,9 +100,8 @@ class StatesTableViewController: CommonTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let vc = StatesDetailViewController()
         let state = states[indexPath.row]
-        vc.state = state
+        let vc = StatesDetailViewController(state: state)
         navigationController?.pushViewController(vc, animated: true)
 
     }
