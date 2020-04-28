@@ -44,7 +44,6 @@ class ArticlesTableViewController: CommonTableViewController {
             case .success(let model):
                 
                 self?.articles = model
-                
                 DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
             }
         }

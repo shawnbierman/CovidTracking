@@ -69,6 +69,7 @@ class StatesTableViewController: CommonTableViewController {
                 DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
                 
             case .success(let model):
+                
                 self?.states = model
                 DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
             }
