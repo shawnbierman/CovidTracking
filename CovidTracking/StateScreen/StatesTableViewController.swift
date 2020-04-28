@@ -86,13 +86,9 @@ class StatesTableViewController: CommonTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
-        let model = states[indexPath.row]
-        let positives = model.positive?.formatNumber(as: .decimal) ?? "0"
-        let state = model.state
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! StatesTableViewCell
         
-        cell.textLabel?.text = statesDictionary[state]
-        cell.detailTextLabel?.text = positives
+        cell.configure(with: states[indexPath.row])
         
         return cell
         

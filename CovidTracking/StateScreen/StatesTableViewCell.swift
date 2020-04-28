@@ -23,9 +23,11 @@ class StatesTableViewCell: UITableViewCell {
     }
     
     
-    func configure(with result: Article) {
-        textLabel?.text = result.title ?? "Title not found"
-        detailTextLabel?.text = result.author ?? result.publication ?? "Unkown author"
+    func configure(with state: State) {
+        
+        textLabel?.text = statesDictionary[state.state]
+        detailTextLabel?.text = state.positive?.formatNumber(as: .decimal) ?? "0"
+        
     }
     
     
