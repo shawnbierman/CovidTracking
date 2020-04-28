@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum Grade: String, Codable {
+enum Grade: String, Decodable {
     case a = "A"
     case b = "B"
     case c = "C"
     case d = "D"
 }
 
-struct State: Codable {
+struct State: Decodable {
     let state: String
     let positive, totalTestResults, negative, death: Int?
     let dateModified, dateChecked: String
