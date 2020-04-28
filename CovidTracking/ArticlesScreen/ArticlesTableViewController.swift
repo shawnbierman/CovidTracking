@@ -39,16 +39,13 @@ class ArticlesTableViewController: CommonTableViewController {
             case .failure(let error):
                 
                 dump(error)
-                
-                self?.refreshControl?.endRefreshing()
+                DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
                 
             case .success(let model):
                 
                 self?.articles = model
                 
-                DispatchQueue.main.async {
-                    self?.refreshControl?.endRefreshing()
-                }
+                DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
             }
         }
     }

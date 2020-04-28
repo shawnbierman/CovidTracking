@@ -48,12 +48,14 @@ class StatesTableViewController: CommonTableViewController {
         
     }
     
+    
     @objc func sortTable() {
         
         states.sort(by: sorted ? { $0.state < $1.state } : { $0.state > $1.state })
         sorted.toggle()
         
     }
+    
     
     @objc fileprivate func refreshData() {
         
@@ -64,16 +66,12 @@ class StatesTableViewController: CommonTableViewController {
             case .failure(let error):
                 
                 dump(error)
-                
-                self?.refreshControl?.endRefreshing()
+                DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
                 
             case .success(let model):
                
                 self?.states = model.sorted(by: { $0.state < $1.state })
-                
-                DispatchQueue.main.async {
-                    self?.refreshControl?.endRefreshing()
-                }
+                DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
             }
         }
     }
