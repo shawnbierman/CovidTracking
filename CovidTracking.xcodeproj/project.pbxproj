@@ -28,8 +28,8 @@
 		1F9A58AA2427DD99006E2D89 /* CovidTrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A58A92427DD99006E2D89 /* CovidTrackingUITests.swift */; };
 		1F9A58BD2427DF9D006E2D89 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A58BC2427DF9D006E2D89 /* Service.swift */; };
 		1F9A58BF2427E5A5006E2D89 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A58BE2427E5A5006E2D89 /* State.swift */; };
+		1FC0CE192457BA7400DDF09F /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0CE182457BA7400DDF09F /* States.swift */; };
 		1FC0F5582428F11C0082D487 /* StateDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0F5572428F11C0082D487 /* StateDictionary.swift */; };
-		1FEADCC9245653A00071AA71 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEADCC8245653A00071AA71 /* Date+Ext.swift */; };
 		1FEADCCB245654290071AA71 /* StatesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEADCCA245654290071AA71 /* StatesDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,8 +78,8 @@
 		1F9A58AB2427DD99006E2D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F9A58BC2427DF9D006E2D89 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1F9A58BE2427E5A5006E2D89 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		1FC0CE182457BA7400DDF09F /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		1FC0F5572428F11C0082D487 /* StateDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDictionary.swift; sourceTree = "<group>"; };
-		1FEADCC8245653A00071AA71 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		1FEADCCA245654290071AA71 /* StatesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatesDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,7 +141,6 @@
 				1F98EE2F24551F4500266B80 /* UIViewController+Ext.swift */,
 				1F08185A2455FEB700C8C1F8 /* UITableView+Ext.swift */,
 				1F1F61052456485000E4943E /* Int+Ext.swift */,
-				1FEADCC8245653A00071AA71 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,6 +209,7 @@
 				1F9A58BE2427E5A5006E2D89 /* State.swift */,
 				1F37E1AB242BE1EF0029F428 /* Article.swift */,
 				1F851876243171EF0096B60E /* Total.swift */,
+				1FC0CE182457BA7400DDF09F /* States.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +397,7 @@
 				1F1F61062456485000E4943E /* Int+Ext.swift in Sources */,
 				1F9A588A2427DD96006E2D89 /* SceneDelegate.swift in Sources */,
 				1F1F6104245637AF00E4943E /* StatesTableViewCell.swift in Sources */,
+				1FC0CE192457BA7400DDF09F /* States.swift in Sources */,
 				1F08185D2455FFEC00C8C1F8 /* ArticleTableViewCell.swift in Sources */,
 				1F37E1AC242BE1EF0029F428 /* Article.swift in Sources */,
 				1F1117C72454EF6200ED54F7 /* ContentViewController.swift in Sources */,
@@ -407,7 +408,6 @@
 				1F1117C42454EE4700ED54F7 /* TabBarViewController.swift in Sources */,
 				1FC0F5582428F11C0082D487 /* StateDictionary.swift in Sources */,
 				1F9A58BF2427E5A5006E2D89 /* State.swift in Sources */,
-				1FEADCC9245653A00071AA71 /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

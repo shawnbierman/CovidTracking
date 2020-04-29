@@ -30,7 +30,6 @@ class StatesTableViewController: CommonTableViewController {
         super.viewDidLoad()
         
         tableView.register(StatesTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-
         configureRefreshControl(with: #selector(refreshData))
         configureNavButton()
         refreshData()

@@ -23,7 +23,6 @@ class ArticlesTableViewController: CommonTableViewController {
         super.viewDidLoad()
         
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        
         configureRefreshControl(with: #selector(refreshData))
         refreshData()
         
