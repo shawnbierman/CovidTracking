@@ -29,12 +29,15 @@ class ContentViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    
+    init(with state: State) {
+        super.init(nibName: nil, bundle: nil)
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureComponents()
         configureLayout()
-        set()
         
     }
     
@@ -42,24 +45,11 @@ class ContentViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    func set() {
-        headerLabel.text = "The Covid Tracking Project".uppercased()
-        citationLabel.text = "All data collected from covidtracking.com"
-        regionImage.image = UIImage(named: "Tennessee")
-    }
   
     
-    fileprivate func configureLayout() {
+    fileprivate func configureComponents() {
         
-        let views = [headerLabel, bodyLabel, footerLabel, regionImage, citationLabel]
-        
-        for view in views {
-            self.view.addSubview(view)
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
-        
+        headerLabel.text = "The Covid Tracking Project".uppercased()
         headerLabel.font = UIFont(name: "DINCondensed-Bold", size: 75)
         headerLabel.adjustsFontSizeToFitWidth = true
         headerLabel.textAlignment = .center
@@ -75,11 +65,26 @@ class ContentViewController: UIViewController {
         footerLabel.textColor = .secondaryLabel
         footerLabel.adjustsFontSizeToFitWidth = true
         
+        regionImage.image = UIImage(named: "Tennessee")
         regionImage.contentMode = .scaleAspectFit
         
+        citationLabel.text = "All data collected from covidtracking.com"
         citationLabel.font = .preferredFont(forTextStyle: .caption2)
         citationLabel.textAlignment = .center
         citationLabel.textColor = .tertiaryLabel
+        citationLabel.lineBreakMode = .byTruncatingMiddle
+        
+    }
+    
+    
+    fileprivate func configureLayout() {
+        
+        let views = [headerLabel, bodyLabel, footerLabel, regionImage, citationLabel]
+        
+        for view in views {
+            self.view.addSubview(view)
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         NSLayoutConstraint.activate([
             
