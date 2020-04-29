@@ -34,20 +34,42 @@ class StatesDetailViewController: UIViewController {
     
     func set() {
         
-        let total = state!
-        let totalResults = total.totalTestResults?.formatNumber(as: .decimal) ?? "unknown"
-        let positives = total.positive?.formatNumber(as: .decimal) ?? "unknown"
-        let deaths = total.death?.formatNumber(as: .decimal) ?? "unknown"
+        guard let state = state else { return }
         
+        let totalResults = state.totalTestResults?.formatNumber(as: .decimal) ?? "unknown"
+        let positives = state.positive?.formatNumber(as: .decimal) ?? "unknown"
+        let deaths = state.death?.formatNumber(as: .decimal) ?? "unknown"
+        let dateModified = formatDate(from: state.dateModified)
         let body = "The U.S. has currently tested a total of \(totalResults) persons with a total of \(positives) positive results."
         
         DispatchQueue.main.async {
             self.content.headerLabel.text = statesDictionary[self.state!.state]?.uppercased()
             self.content.bodyLabel.text = body
             self.content.footerLabel.text = "There have been \(deaths) deaths in total."
+            self.content.citationLabel.text = "Last modified: \(dateModified ?? "unknown")"
         }
         
     }
+    
+    
+    func formatDate(from input: String) -> String? {
+        
+        let df = DateFormatter()
+            df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        if let date = df.date(from: input) {
+            
+            let outFormat = DateFormatter()
+                outFormat.dateStyle = .long
+                outFormat.timeStyle = .medium
+            
+            return outFormat.string(from: date)
+            
+        }
+        
+        return nil
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
