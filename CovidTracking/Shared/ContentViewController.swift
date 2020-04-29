@@ -69,7 +69,8 @@ class ContentViewController: UIViewController {
         regionImage.contentMode = .scaleAspectFit
         
         citationLabel.text = "All data collected from covidtracking.com"
-        citationLabel.font = .preferredFont(forTextStyle: .caption2)
+        citationLabel.font = .preferredFont(forTextStyle: .caption1)
+        citationLabel.adjustsFontSizeToFitWidth = true
         citationLabel.textAlignment = .center
         citationLabel.textColor = .tertiaryLabel
         citationLabel.lineBreakMode = .byTruncatingMiddle
@@ -106,7 +107,7 @@ class ContentViewController: UIViewController {
             regionImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             regionImage.heightAnchor.constraint(equalToConstant: 200),
             
-            citationLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            citationLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             citationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             citationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             citationLabel.heightAnchor.constraint(equalToConstant: 30)
