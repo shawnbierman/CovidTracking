@@ -73,6 +73,7 @@ class ContentViewController: UIViewController {
         footerLabel.font = .preferredFont(forTextStyle: .subheadline)
         footerLabel.textAlignment = .center
         footerLabel.textColor = .secondaryLabel
+        footerLabel.adjustsFontSizeToFitWidth = true
         
         regionImage.contentMode = .scaleAspectFit
         
