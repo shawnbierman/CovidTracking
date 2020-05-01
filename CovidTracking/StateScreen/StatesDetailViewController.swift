@@ -40,7 +40,8 @@ class StatesDetailViewController: UIViewController {
         let positives = state.positive?.formatNumber(as: .decimal) ?? "unknown"
         let deaths = state.death?.formatNumber(as: .decimal) ?? "unknown"
         let dateModified = formatDate(from: state.dateModified)
-        let body = "The U.S. has currently tested a total of \(totalResults) persons with a total of \(positives) positive results."
+        let stateName = statesDictionary[state.state] ?? "unknown"
+        let body = "\(stateName) has currently tested a total of \(totalResults) persons with a total of \(positives) positive results."
         
         DispatchQueue.main.async {
             self.content.headerLabel.text = statesDictionary[self.state!.state]?.uppercased()
