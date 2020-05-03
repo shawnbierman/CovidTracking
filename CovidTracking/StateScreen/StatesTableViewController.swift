@@ -60,17 +60,24 @@ class StatesTableViewController: CommonTableViewController {
         
         Service.shared.fetchAllStates(using: .states) { [weak self] (result) in
             
+            guard let self = self else { return }
+            
             switch result {
                 
             case .failure(let error):
                 
                 dump(error)
-                DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
+                DispatchQueue.main.async { self.refreshControl?.endRefreshing() }
                 
             case .success(let model):
                 
-                self?.states = model.sorted(by: { $0.fullStateName! < $1.fullStateName! })
-                DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
+                self.states = model.sorted(by: { $0.fullStateName! < $1.fullStateName! })
+                DispatchQueue.main.async {
+                    
+                    self.sorted = false
+                    self.refreshControl?.endRefreshing()
+                    
+                }
             }
         }
     }
