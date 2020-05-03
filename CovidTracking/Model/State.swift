@@ -19,4 +19,5 @@ struct State: Decodable {
     let state: String
     let positive, totalTestResults, negative, death: Int?
     let dateModified, dateChecked: String
+    var fullStateName: String? { return statesDictionary[state] ?? nil }
 }

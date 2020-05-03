@@ -10,6 +10,9 @@ import UIKit
 
 class StatesTableViewCell: UITableViewCell {
 
+    // init() runs only when the viewcontroller first appears and will only run
+    // for enough cells to fill the screen. subsequent appearences
+    // are dequeued/reused cells.
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
@@ -23,11 +26,11 @@ class StatesTableViewCell: UITableViewCell {
     }
     
     
+    // runs everytime cell is drawn on screen
     func configure(with state: State) {
         
-        textLabel?.text = statesDictionary[state.state]
+        textLabel?.text = state.fullStateName
         detailTextLabel?.text = state.positive?.formatNumber(as: .decimal) ?? "0"
-        
     }
     
     

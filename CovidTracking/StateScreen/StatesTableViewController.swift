@@ -69,7 +69,7 @@ class StatesTableViewController: CommonTableViewController {
                 
             case .success(let model):
                 
-                self?.states = model
+                self?.states = model.sorted(by: { $0.fullStateName! < $1.fullStateName! })
                 DispatchQueue.main.async { self?.refreshControl?.endRefreshing() }
             }
         }
@@ -86,8 +86,7 @@ class StatesTableViewController: CommonTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! StatesTableViewCell
-        
-        cell.configure(with: states[indexPath.row])
+            cell.configure(with: states[indexPath.row])
         
         return cell
         
