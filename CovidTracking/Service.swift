@@ -17,6 +17,8 @@ enum Endpoint: String {
 class Service {
 
     static let shared = Service() // singleton
+    
+    private let baseURLString = "https://covidtracking.com/api/"
 
     // MARK: - Available apis
     /// You must supply a model for each API and an optional authorization string if required.
@@ -38,7 +40,7 @@ class Service {
 
         dump(endpoint)
         
-        let baseUrlString = "https://covidtracking.com/api/".appending(endpoint.rawValue)
+        let baseUrlString = baseURLString.appending(endpoint.rawValue)
         let url = URL(string: baseUrlString)
         let task = URLSession.shared.dataTask(with: url!) { (data, _, error) in
 
@@ -54,6 +56,5 @@ class Service {
         }
 
         task.resume()
-
     }
 }
