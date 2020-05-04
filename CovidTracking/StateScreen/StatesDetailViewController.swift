@@ -44,16 +44,39 @@ class StatesDetailViewController: UIViewController {
         let positives = state.positive?.formatNumber(as: .decimal) ?? "unknown"
         let deaths = state.death?.formatNumber(as: .decimal) ?? "unknown"
         let dateModified = formatDate(from: state.dateModified)
-        let stateName = state.fullStateName ?? "unknown:"
-        let body = "\(stateName) has currently tested a total of \(totalResults) persons with a total of \(positives) positive results."
+        let stateName = state.fullStateName ?? "unknown"
+
+        let attributes: [NSAttributedString.Key: Any] = [ .font: UIFont.boldSystemFont(ofSize: content.bodyLabel.font.pointSize)]
+        let attributedTotal = NSMutableAttributedString(string: totalResults, attributes: attributes)
+        let attributedPositives = NSMutableAttributedString(string: positives, attributes: attributes)
+        let attributedDeaths = NSMutableAttributedString(string: deaths, attributes: attributes)
+
+        let bodyAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.secondaryLabel]
+        let body1 = NSMutableAttributedString(string: "\(stateName) has currently tested a total of ", attributes: bodyAttributes)
+        let body2 = NSMutableAttributedString(string: " persons with a total of ", attributes: bodyAttributes)
+        let body3 = NSMutableAttributedString(string: " positive results.", attributes: bodyAttributes)
+
+        let body = NSMutableAttributedString()
+        body.append(body1)
+        body.append(attributedTotal)
+        body.append(body2)
+        body.append(attributedPositives)
+        body.append(body3)
+
+        let footer1 = NSMutableAttributedString(string: "There have been ", attributes: bodyAttributes)
+        let footer2 = NSMutableAttributedString(string: " deaths in total.", attributes: bodyAttributes)
+        
+        let footer = NSMutableAttributedString()
+        footer.append(footer1)
+        footer.append(attributedDeaths)
+        footer.append(footer2)
         
         DispatchQueue.main.async {
             self.content.headerLabel.text = stateName.uppercased()
-            self.content.bodyLabel.text = body
-            self.content.footerLabel.text = "There have been \(deaths) deaths in total."
+            self.content.bodyLabel.attributedText = body
+            self.content.footerLabel.attributedText = footer
             self.content.citationLabel.text = "Last modified: \(dateModified ?? "unknown")"
         }
-        
     }
     
     
