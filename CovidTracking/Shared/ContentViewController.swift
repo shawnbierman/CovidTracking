@@ -8,14 +8,6 @@
 
 import UIKit
 
-struct Content {
-    let headerText: String
-    let bodyText: String
-    let footerText: String
-    let citationText: String
-    let regionImage: UIImage?
-}
-
 class ContentViewController: UIViewController {
     
     let headerLabel   = UILabel()
@@ -28,6 +20,7 @@ class ContentViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
     }
+    
     
     init(with state: State) {
         super.init(nibName: nil, bundle: nil)
