@@ -14,7 +14,6 @@ class ContentViewController: UIViewController {
     let bodyLabel     = UILabel()
     let footerLabel   = UILabel()
     let citationLabel = UILabel()
-    let regionImage   = UIImageView()
 
     
     init() {
@@ -52,14 +51,11 @@ class ContentViewController: UIViewController {
         bodyLabel.numberOfLines = 0
         bodyLabel.font = .preferredFont(forTextStyle: .body)
         bodyLabel.textAlignment = .justified
+        bodyLabel.adjustsFontSizeToFitWidth = true
         
         footerLabel.font = .preferredFont(forTextStyle: .subheadline)
         footerLabel.textAlignment = .center
-        footerLabel.textColor = .secondaryLabel
         footerLabel.adjustsFontSizeToFitWidth = true
-        
-        regionImage.image = UIImage(named: "Tennessee")
-        regionImage.contentMode = .scaleAspectFit
         
         citationLabel.text = "All data collected from covidtracking.com"
         citationLabel.font = .preferredFont(forTextStyle: .caption1)
@@ -73,7 +69,7 @@ class ContentViewController: UIViewController {
     
     fileprivate func configureLayout() {
         
-        let views = [headerLabel, bodyLabel, footerLabel, regionImage, citationLabel]
+        let views = [headerLabel, bodyLabel, footerLabel, citationLabel]
         
         for view in views {
             self.view.addSubview(view)
@@ -94,11 +90,6 @@ class ContentViewController: UIViewController {
             footerLabel.topAnchor.constraint(equalTo: bodyLabel.bottomAnchor, constant: 30),
             footerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             footerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            
-            regionImage.topAnchor.constraint(equalTo: footerLabel.bottomAnchor, constant: 20),
-            regionImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            regionImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            regionImage.heightAnchor.constraint(equalToConstant: 200),
             
             citationLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             citationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
