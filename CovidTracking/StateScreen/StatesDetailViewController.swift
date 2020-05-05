@@ -46,30 +46,31 @@ class StatesDetailViewController: UIViewController {
         let dateModified = formatDate(from: state.dateModified)
         let stateName = state.fullStateName ?? "unknown"
 
-        let attributes: [NSAttributedString.Key: Any] = [ .font: UIFont.boldSystemFont(ofSize: content.bodyLabel.font.pointSize)]
-        let attributedTotal = NSMutableAttributedString(string: totalResults, attributes: attributes)
-        let attributedPositives = NSMutableAttributedString(string: positives, attributes: attributes)
-        let attributedDeaths = NSMutableAttributedString(string: deaths, attributes: attributes)
-
+        let boldAttribute: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: content.bodyLabel.font.pointSize)]
         let bodyAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.secondaryLabel]
-        let body1 = NSMutableAttributedString(string: "\(stateName) has currently tested a total of ", attributes: bodyAttributes)
-        let body2 = NSMutableAttributedString(string: " persons with a total of ", attributes: bodyAttributes)
+        
+        let attributedTotal = NSMutableAttributedString(string: totalResults, attributes: boldAttribute)
+        let attributedPositives = NSMutableAttributedString(string: positives, attributes: boldAttribute)
+        let attributedDeaths = NSMutableAttributedString(string: deaths, attributes: boldAttribute)
+        
+        let body1 = NSMutableAttributedString(string: "\(stateName) has reported a total of ", attributes: bodyAttributes)
+        let body2 = NSMutableAttributedString(string: " persons have been tested for Covid-19, with a total of ", attributes: bodyAttributes)
         let body3 = NSMutableAttributedString(string: " positive results.", attributes: bodyAttributes)
 
         let body = NSMutableAttributedString()
-        body.append(body1)
-        body.append(attributedTotal)
-        body.append(body2)
-        body.append(attributedPositives)
-        body.append(body3)
+            body.append(body1)
+            body.append(attributedTotal)
+            body.append(body2)
+            body.append(attributedPositives)
+            body.append(body3)
 
         let footer1 = NSMutableAttributedString(string: "There have been ", attributes: bodyAttributes)
         let footer2 = NSMutableAttributedString(string: " deaths in total.", attributes: bodyAttributes)
         
         let footer = NSMutableAttributedString()
-        footer.append(footer1)
-        footer.append(attributedDeaths)
-        footer.append(footer2)
+            footer.append(footer1)
+            footer.append(attributedDeaths)
+            footer.append(footer2)
         
         DispatchQueue.main.async {
             self.content.headerLabel.text = stateName.uppercased()
@@ -80,6 +81,9 @@ class StatesDetailViewController: UIViewController {
     }
     
     
+    /// Format an iso8601 String into a human readable format.
+    /// - Parameter input: An iso8601 formatted date String
+    /// - Returns: A localized optional date String
     func formatDate(from input: String) -> String? {
         
         let df = DateFormatter()
