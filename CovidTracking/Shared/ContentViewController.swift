@@ -50,7 +50,7 @@ class ContentViewController: UIViewController {
         
         bodyLabel.numberOfLines = 0
         bodyLabel.font = .preferredFont(forTextStyle: .body)
-        bodyLabel.textAlignment = .justified
+        bodyLabel.textAlignment = .left
         bodyLabel.adjustsFontSizeToFitWidth = true
         
         footerLabel.font = .preferredFont(forTextStyle: .subheadline)
