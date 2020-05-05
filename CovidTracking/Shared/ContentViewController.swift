@@ -11,6 +11,7 @@ import UIKit
 class ContentViewController: UIViewController {
     
     let headerLabel   = UILabel()
+    let dividerView   = UIView()
     let bodyLabel     = UILabel()
     let footerLabel   = UILabel()
     let citationLabel = UILabel()
@@ -48,6 +49,9 @@ class ContentViewController: UIViewController {
         headerLabel.textColor = .secondaryLabel
         headerLabel.minimumScaleFactor = 0.2
         
+        dividerView.backgroundColor = .secondaryLabel
+        dividerView.layer.opacity   = 0.5
+        
         bodyLabel.numberOfLines = 0
         bodyLabel.font = .preferredFont(forTextStyle: .body)
         bodyLabel.textAlignment = .left
@@ -69,7 +73,7 @@ class ContentViewController: UIViewController {
     
     fileprivate func configureLayout() {
         
-        let views = [headerLabel, bodyLabel, footerLabel, citationLabel]
+        let views = [headerLabel, dividerView, bodyLabel, footerLabel, citationLabel]
         
         for view in views {
             self.view.addSubview(view)
@@ -83,7 +87,12 @@ class ContentViewController: UIViewController {
             headerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             headerLabel.heightAnchor.constraint(equalToConstant: 85),
             
-            bodyLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 30),
+            dividerView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor),
+            dividerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 160),
+            dividerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -160),
+            dividerView.heightAnchor.constraint(equalToConstant: 0.7),
+            
+            bodyLabel.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 40),
             bodyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             bodyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             
