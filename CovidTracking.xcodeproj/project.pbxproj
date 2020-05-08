@@ -29,6 +29,7 @@
 		1F9A58BD2427DF9D006E2D89 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A58BC2427DF9D006E2D89 /* Service.swift */; };
 		1F9A58BF2427E5A5006E2D89 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A58BE2427E5A5006E2D89 /* State.swift */; };
 		1FC0F5582428F11C0082D487 /* StateDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0F5572428F11C0082D487 /* StateDictionary.swift */; };
+		1FDBA3B6246448A800C9CF7B /* OSLog+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDBA3B5246448A800C9CF7B /* OSLog+Ext.swift */; };
 		1FEADCCB245654290071AA71 /* StatesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEADCCA245654290071AA71 /* StatesDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		1F9A58BC2427DF9D006E2D89 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1F9A58BE2427E5A5006E2D89 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		1FC0F5572428F11C0082D487 /* StateDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDictionary.swift; sourceTree = "<group>"; };
+		1FDBA3B5246448A800C9CF7B /* OSLog+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Ext.swift"; sourceTree = "<group>"; };
 		1FEADCCA245654290071AA71 /* StatesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatesDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 				1F98EE2F24551F4500266B80 /* UIViewController+Ext.swift */,
 				1F08185A2455FEB700C8C1F8 /* UITableView+Ext.swift */,
 				1F1F61052456485000E4943E /* Int+Ext.swift */,
+				1FDBA3B5246448A800C9CF7B /* OSLog+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				1F08185B2455FEB700C8C1F8 /* UITableView+Ext.swift in Sources */,
 				1F9A58882427DD96006E2D89 /* AppDelegate.swift in Sources */,
 				1F1117C92454F74800ED54F7 /* ArticlesTableViewController.swift in Sources */,
+				1FDBA3B6246448A800C9CF7B /* OSLog+Ext.swift in Sources */,
 				1F1F61062456485000E4943E /* Int+Ext.swift in Sources */,
 				1F9A588A2427DD96006E2D89 /* SceneDelegate.swift in Sources */,
 				1F1F6104245637AF00E4943E /* StatesTableViewCell.swift in Sources */,

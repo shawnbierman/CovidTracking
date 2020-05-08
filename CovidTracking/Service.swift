@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 enum Endpoint: String {
     case states
@@ -21,26 +22,49 @@ class Service {
     private let baseURLString = "https://covidtracking.com/api/"
 
     // MARK: - Available apis
-    /// You must supply a model for each API and an optional authorization string if required.
-
+    
+    /// The fetch suite is used to retrieve information from a supplied end point and will return the result
+    /// to the completion handler.
+    /// - Parameters:
+    ///   - endpoint: The Endpoint Type is a type safe enum that provides your fetch API's enpoint.
+    ///   - completion: The completion handler will take a custom model and return with the Result Type.
+    
     func fetchAllStates(using endpoint: Endpoint, completion: @escaping (Result<[State], Error>) -> Void) {
         fetchJSONDecodableData(endpoint: endpoint, completion: completion)
     }
 
+    /// The fetch suite is used to retrieve information from a supplied end point and will return the result
+    /// to the completion handler.
+    /// - Parameters:
+    ///   - endpoint: The Endpoint Type is a type safe enum that provides your fetch API's enpoint.
+    ///   - completion: The completion handler will take a custom model and return with the Result Type.
+    
     func fetchAllArticles(using endpoint: Endpoint, completion: @escaping (Result<[Article], Error>) -> Void) {
         fetchJSONDecodableData(endpoint: endpoint, completion: completion)
     }
 
+    /// The fetch suite is used to retrieve information from a supplied end point and will return the result
+    /// to the completion handler.
+    /// - Parameters:
+    ///   - endpoint: The Endpoint Type is a type safe enum that provides your fetch API's enpoint.
+    ///   - completion: The completion handler will take a custom model and return with the Result Type.
+    
     func fetchTotals(using endpoint: Endpoint, completion: @escaping (Result<[Total], Error>) -> Void) {
         fetchJSONDecodableData(endpoint: endpoint, completion: completion)
     }
     
     // MARK: - Session and decode
+    /// A URLSession task that will fetch the given endpoint. It will return to the Result type a success or failure for the given generic model.
+    /// - Parameters:
+    ///   - endpoint: The Endpoint Type is a type safe enum that provides your fetch API's enpoint.
+    ///   - completion: The completion handler will take a custom model and return with the Result Type.
+    
     private func fetchJSONDecodableData<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> Void) {
 
-        dump(endpoint)
-        
         let baseUrlString = baseURLString.appending(endpoint.rawValue)
+
+        os_log("%{PUBLIC}@", log: .networking, type: .info, baseUrlString)
+        
         let url = URL(string: baseUrlString)
         let task = URLSession.shared.dataTask(with: url!) { (data, _, error) in
 

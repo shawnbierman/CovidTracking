@@ -6,6 +6,7 @@
 //  Copyright © 2020 Shawn Bierman. All rights reserved.
 //
 
+import os.log
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -21,11 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = TabBarViewController()
         window?.makeKeyAndVisible()
         
+        os_log(#function, log: .viewCycle, type: .debug)
+        
     }
     
-    func       sceneDidDisconnect (_ scene: UIScene) { }
-    func     sceneDidBecomeActive (_ scene: UIScene) { }
-    func    sceneWillResignActive (_ scene: UIScene) { }
-    func sceneWillEnterForeground (_ scene: UIScene) { }
-    func  sceneDidEnterBackground (_ scene: UIScene) { }
+    func       sceneDidDisconnect (_ scene: UIScene) { os_log(#function, log: .viewCycle, type: .debug) }
+    func     sceneDidBecomeActive (_ scene: UIScene) { os_log(#function, log: .viewCycle, type: .debug) }
+    func    sceneWillResignActive (_ scene: UIScene) { os_log(#function, log: .viewCycle, type: .debug) }
+    func sceneWillEnterForeground (_ scene: UIScene) { os_log(#function, log: .viewCycle, type: .debug) }
+    func  sceneDidEnterBackground (_ scene: UIScene) { os_log(#function, log: .viewCycle, type: .debug) }
 }
