@@ -13,9 +13,11 @@ class ArticleTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
-        textLabel?.numberOfLines = 0
-        detailTextLabel?.textColor = .secondaryLabel
-        accessoryType = .disclosureIndicator
+        textLabel?.numberOfLines    = 0
+        textLabel?.font             = UIFont.preferredFont(forTextStyle: .headline)
+        detailTextLabel?.textColor  = .secondaryLabel
+        detailTextLabel?.font       = UIFont.preferredFont(forTextStyle: .subheadline)
+        accessoryType               = .disclosureIndicator
     }
     
     
@@ -26,7 +28,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     func configure(with result: Article) {
         textLabel?.text = result.title ?? "Title not found"
-        detailTextLabel?.text = result.author ?? result.publication ?? "Unkown author"
+        detailTextLabel?.text = result.publication ?? result.author ?? "Unkown author"
     }
     
     
