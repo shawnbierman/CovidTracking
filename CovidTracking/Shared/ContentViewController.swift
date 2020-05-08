@@ -25,13 +25,13 @@ class ContentViewController: UIViewController {
     init(with state: State) {
         super.init(nibName: nil, bundle: nil)
     }
-        
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureComponents()
         configureLayout()
-        
     }
     
     
@@ -42,31 +42,31 @@ class ContentViewController: UIViewController {
     
     fileprivate func configureComponents() {
         
-        headerLabel.text = "The Covid Tracking Project".uppercased()
-        headerLabel.font = UIFont(name: "DINCondensed-Bold", size: 75)
-        headerLabel.adjustsFontSizeToFitWidth = true
-        headerLabel.textAlignment = .center
-        headerLabel.textColor = .secondaryLabel
-        headerLabel.minimumScaleFactor = 0.2
+        headerLabel.text                        = "The Covid Tracking Project".uppercased()
+        headerLabel.font                        = UIFont(name: "DINCondensed-Bold", size: 75)
+        headerLabel.adjustsFontSizeToFitWidth   = true
+        headerLabel.textAlignment               = .center
+        headerLabel.textColor                   = .secondaryLabel
+        headerLabel.minimumScaleFactor          = 0.2
         
-        dividerView.backgroundColor = .secondaryLabel
-        dividerView.layer.opacity   = 0.5
+        dividerView.backgroundColor             = .secondaryLabel
+        dividerView.layer.opacity               = 0.5
         
-        bodyLabel.numberOfLines = 0
-        bodyLabel.font = .preferredFont(forTextStyle: .body)
-        bodyLabel.textAlignment = .left
-        bodyLabel.adjustsFontSizeToFitWidth = true
+        bodyLabel.numberOfLines                 = 0
+        bodyLabel.font                          = .preferredFont(forTextStyle: .body)
+        bodyLabel.textAlignment                 = .left
+        bodyLabel.adjustsFontSizeToFitWidth     = true
         
-        footerLabel.font = .preferredFont(forTextStyle: .subheadline)
-        footerLabel.textAlignment = .center
-        footerLabel.adjustsFontSizeToFitWidth = true
+        footerLabel.font                        = .preferredFont(forTextStyle: .subheadline)
+        footerLabel.textAlignment               = .center
+        footerLabel.adjustsFontSizeToFitWidth   = true
         
-        citationLabel.text = "All data collected from covidtracking.com"
-        citationLabel.font = .preferredFont(forTextStyle: .caption1)
+        citationLabel.text                      = "All data collected from covidtracking.com"
+        citationLabel.font                      = .preferredFont(forTextStyle: .caption1)
         citationLabel.adjustsFontSizeToFitWidth = true
-        citationLabel.textAlignment = .center
-        citationLabel.textColor = .tertiaryLabel
-        citationLabel.lineBreakMode = .byTruncatingMiddle
+        citationLabel.textAlignment             = .center
+        citationLabel.textColor                 = .tertiaryLabel
+        citationLabel.lineBreakMode             = .byTruncatingMiddle
         
     }
     
