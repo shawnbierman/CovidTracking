@@ -19,7 +19,7 @@ class Service {
 
     static let shared = Service() // singleton
     
-    private let baseURLString = "https://covidtracking.com/api/"
+    private let baseURLString = "https://covidtracking.com/api/v1/"
 
     // MARK: - Available apis
     
@@ -61,7 +61,7 @@ class Service {
     
     private func fetchJSONDecodableData<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> Void) {
 
-        let baseUrlString = baseURLString.appending(endpoint.rawValue)
+        let baseUrlString = baseURLString.appending(endpoint.rawValue).appending("/current.json")
 
         os_log("%{PUBLIC}@", log: .networking, type: .info, baseUrlString)
         
