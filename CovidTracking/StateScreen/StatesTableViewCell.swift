@@ -16,10 +16,11 @@ class StatesTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
-        textLabel?.font             = UIFont.preferredFont(forTextStyle: .headline)
+        textLabel?.font             = UIFont.preferredFont(forTextStyle: .title3)
         detailTextLabel?.font       = UIFont.preferredFont(forTextStyle: .subheadline)
         detailTextLabel?.textColor  = .secondaryLabel
         accessoryType               = .disclosureIndicator
+        
     }
     
     
