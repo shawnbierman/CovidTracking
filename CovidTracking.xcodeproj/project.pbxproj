@@ -29,6 +29,7 @@
 		1F9A58BD2427DF9D006E2D89 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A58BC2427DF9D006E2D89 /* Service.swift */; };
 		1F9A58BF2427E5A5006E2D89 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A58BE2427E5A5006E2D89 /* State.swift */; };
 		1FC0F5582428F11C0082D487 /* StateDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0F5572428F11C0082D487 /* StateDictionary.swift */; };
+		1FD85E2B2465D7F1005D1298 /* StatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD85E2A2465D7F1005D1298 /* StatesCell.swift */; };
 		1FDBA3B6246448A800C9CF7B /* OSLog+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDBA3B5246448A800C9CF7B /* OSLog+Ext.swift */; };
 		1FEADCCB245654290071AA71 /* StatesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEADCCA245654290071AA71 /* StatesDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		1F9A58BC2427DF9D006E2D89 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1F9A58BE2427E5A5006E2D89 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		1FC0F5572428F11C0082D487 /* StateDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDictionary.swift; sourceTree = "<group>"; };
+		1FD85E2A2465D7F1005D1298 /* StatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesCell.swift; sourceTree = "<group>"; };
 		1FDBA3B5246448A800C9CF7B /* OSLog+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Ext.swift"; sourceTree = "<group>"; };
 		1FEADCCA245654290071AA71 /* StatesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatesDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +222,7 @@
 				1F1117CA2454FF8300ED54F7 /* StatesTableViewController.swift */,
 				1FEADCCA245654290071AA71 /* StatesDetailViewController.swift */,
 				1F1F6103245637AF00E4943E /* StatesTableViewCell.swift */,
+				1FD85E2A2465D7F1005D1298 /* StatesCell.swift */,
 			);
 			path = StateScreen;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				1F1117C92454F74800ED54F7 /* ArticlesTableViewController.swift in Sources */,
 				1FDBA3B6246448A800C9CF7B /* OSLog+Ext.swift in Sources */,
 				1F1F61062456485000E4943E /* Int+Ext.swift in Sources */,
+				1FD85E2B2465D7F1005D1298 /* StatesCell.swift in Sources */,
 				1F9A588A2427DD96006E2D89 /* SceneDelegate.swift in Sources */,
 				1F1F6104245637AF00E4943E /* StatesTableViewCell.swift in Sources */,
 				1F08185D2455FFEC00C8C1F8 /* ArticleTableViewCell.swift in Sources */,
