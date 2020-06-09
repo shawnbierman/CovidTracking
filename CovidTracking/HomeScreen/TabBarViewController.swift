@@ -19,19 +19,13 @@ class TabBarViewController: UITabBarController {
     fileprivate func createViewControllers() -> [UIViewController] {
         
         let homeVC = HomeViewController()
-        homeVC.tabBarItem = createTabBarItem(titled: "Home", using: "house")
-        
-        let articlesVC = ArticlesTableViewController()
-        articlesVC.title = "Articles"
-        articlesVC.tabBarItem = createTabBarItem(titled: "Articles", using: "doc")
+            homeVC.tabBarItem = createTabBarItem(titled: "Home", using: "house")
         
         let statesVC = StatesTableViewController()
-        statesVC.title = "States"
-        statesVC.tabBarItem = createTabBarItem(titled: "State Reports", using: "map")
+            statesVC.title = "States"
+            statesVC.tabBarItem = createTabBarItem(titled: "State Reports", using: "map")
         
-        return [homeVC,
-                UINavigationController(rootViewController: articlesVC),
-                UINavigationController(rootViewController: statesVC)]
+        return [homeVC, UINavigationController(rootViewController: statesVC)]
     }
     
     
